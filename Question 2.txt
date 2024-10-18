@@ -1,0 +1,70 @@
+Question 2  Demonstrate the steps involved in the process of installation and configuration of Hardhat Development
+Environment ?
+                     Ans:- Sider Fusion
+Sure! Hardhat is a popular development environment for Ethereum smart contracts. Below are the steps involved in the installation and configuration of the 
+Hardhat development environment:
+
+Step 1: Install Node.js
+Download Node.js: If you haven't installed Node.js yet, download it from the official Node.js website. Be sure to choose the LTS (Long Term Support) version.
+Install Node.js: Follow the installation instructions specific to your operating system.
+Step 2: Set Up a New Project Directory
+Create a New Directory: Open your terminal or command prompt and create a new directory for your Hardhat project:
+mkdir my-hardhat-project  
+cd my-hardhat-project  
+Step 3: Initialize a New npm Project
+Initialize npm: Inside your project directory, run the following command to create a package.json file:
+npm init -y  
+This command will automatically create a package.json file with default settings.
+Step 4: Install Hardhat
+Install Hardhat: Use npm to install Hardhat as a development dependency:
+npm install --save-dev hardhat  
+Step 5: Create a Hardhat Project
+Run Hardhat: After installation, you can initialize a new Hardhat project:
+npx hardhat  
+Select a Template: You'll be prompted to choose whether to create a basic sample project, an advanced project, or to create a minimal project.
+ Choose "Create a sample project".
+Follow the Prompts: Hardhat will then prompt you to install additional dependencies and provide titles for your project. Answer these prompts as necessary.
+Step 6: Explore the Project Structure
+After the setup completes, you will see that Hardhat has created a project structure with several important files and directories:
+
+contracts/: This directory contains your smart contracts.
+scripts/: You can write scripts to deploy contracts here.
+test/: This directory is for your test files.
+hardhat.config.js: This is the main configuration file for Hardhat.
+Step 7: Configure Hardhat
+Open hardhat.config.js: You can modify the configuration based on your project needs. For example, you can configure networks, 
+compilers (Solidity version), and plugins.
+
+Here’s an example of what part of hardhat.config.js might look like:
+
+require('@nomiclabs/hardhat-waffle');  
+
+module.exports = {  
+  solidity: "0.8.4",  
+  networks: {  
+    hardhat: {  
+      chainId: 1337  
+    },  
+    rinkeby: {  
+      url: 'https://rinkeby.infura.io/v3/YOUR_INFURA_PROJECT_ID',  
+      accounts: ['0xYOUR_PRIVATE_KEY']  
+    }  
+  }  
+};  
+Step 8: Compile Smart Contracts
+Compile Contracts: You can compile your smart contracts by running the following command:
+npx hardhat compile  
+Step 9: Run Hardhat Network
+Start Development Network: You can start Hardhat’s local Ethereum network (for testing) with:
+npx hardhat node  
+Step 10: Deploy Contracts (Optional)
+Write a Deployment Script: You can create a script in the scripts/ folder to deploy your contracts.
+Run the Script: Execute your deployment script with:
+npx hardhat run scripts/sample-script.js --network hardhat  
+Step 11: Testing Your Smart Contracts
+Write Tests: You can write tests in the test/ folder using Mocha/Chai.
+Run Tests: To run your tests, use:
+npx hardhat test  
+Summary
+You have successfully installed and configured your Hardhat development environment! You can now build, test, and deploy Ethereum 
+smart contracts using Hardhat. For more advanced features, consider exploring the official Hardhat documentation.
